@@ -1,6 +1,6 @@
 <div class="container">
 
-    <h4 class="mt-5">Formularios <small>Validación de Formularios Reactivos </small></h4>
+    <h4 class="title mt-5" >Formulario</h4>
     <hr>
     <form [formGroup]="forma" (ngSubmit)="guardar()">
     
@@ -12,7 +12,6 @@
     
             <input class="form-control"
                    type="text"
-                   formControlName="nombre"
                    [class.is-invalid] = "nombreNoValido"
                    placeholder="Nombre">
             <small *ngIf="nombreNoValido" class="text-danger">nombre (minimo 5 letras)</small>
@@ -25,7 +24,6 @@
     
             <input class="form-control"
                    type="text"
-                   formControlName="apellido"
                    [class.is-invalid] = "apellidoNoValido"
                    placeholder="Apellido">
             <small *ngIf="apellidoNoValido" class="text-danger">Campo requerido</small>
@@ -40,7 +38,6 @@
     
         <input class="form-control"
                 type="email"
-                formControlName="correo"
                 [class.is-invalid] = "correoNoValido"
                 placeholder="Correo electrónico">
         <small *ngIf="correoNoValido" class="text-danger">Ingrese un correo valido</small>
@@ -54,7 +51,6 @@
     
           <input class="form-control"
                  type="password"
-                 formControlName="password1"
                  [class.is-invalid] = "password1NoValido"
                  >
         <small *ngIf="password1NoValido" class="text-danger">Contraseña debe contener minimo 6 caracteres</small>
@@ -67,7 +63,6 @@
     
           <input class="form-control"
                  type="password"
-                 formControlName="password2"
                  [class.is-invalid] = "password2NoValido"
                  >
         <small *ngIf="password2NoValido" class="text-danger">La contraseña no coincide</small>
@@ -77,12 +72,12 @@
      
      
       <div class="form-group row">
-        <label class="col-2 col-form-label">&nbsp;</label>
-        <div class="input-group col-md-8">
-          <button type="submit" class="btn btn-outline-primary mr-2">
+        <label class="col-5 col-form-label">&nbsp;</label>
+        <div class="input-group col-md-6" style="margin-bottom: 40px; margin-top: 20px;">
+          <button type="submit" class="btn btn-outline-success mr-2">
             Guardar
           </button>
-          <button type="button" class="btn btn-outline-danger" (click)="limpiar()">
+          <button type="button" class="btn btn-outline-secondary" (click)="limpiar()">
             Limpiar
           </button>
         </div>
@@ -90,14 +85,4 @@
     
     </form>
     
-    <!-- <hr>
-        <h3 class="mt-5">Formulario</h3>
-        <pre>
-            Estado formulario:{{forma.valid}}
-            <br>
-            Status:{{forma.status}}
-        </pre>
-        <pre>
-            {{forma.value | json}}
-        </pre> -->
-    </div>
+</div>

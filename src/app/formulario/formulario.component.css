@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Lobster+Two:ital@0;1&family=Merienda:wght@300&family=Playfair+Display:ital@1&family=Shantell+Sans:ital@1&display=swap');
+
+/* font-family: 'Bree Serif', serif;
+font-family: 'Lobster Two', cursive;
+font-family: 'Merienda', cursive;
+font-family: 'Playfair Display', serif;
+font-family: 'Shantell Sans', cursive; */
+
+.container{
+    background: rgb(127,119,219);
+    background: linear-gradient(90deg, rgba(127,119,219,1) 0%, rgba(240,176,239,1) 57%, rgba(108,159,224,1) 100%);
+    padding-top: 1px;
+    margin-top: 30px;
+}
+
+.btn{
+    justify-content: center;
+    font-family: 'Lobster Two', cursive;
+}
+
+.col-2{
+    text-align: right;
+    font-family: 'Lobster Two', cursive;
+}
+
+.col-4{
+    text-align: right;
+}
+
+.title{
+    text-align: center;
+    font-family: 'Lobster Two', cursive;
+}
