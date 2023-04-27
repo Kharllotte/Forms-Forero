@@ -39,12 +39,16 @@ export class FormularioComponent {
       correo:['', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
       password1:['',[Validators.required , Validators.minLength(6)]],
       password2:['',Validators.required],
-    },
+    },{
+      Validators:this.passwordIguales('password1','password2')
+    }
     
     )
   }
   guardar(){
     console.log(this.forma);
+
+    this.passNoValido();
 
     if (this.forma.invalid){
       return Object.values(this.forma.controls).forEach(control=>{
@@ -57,5 +61,29 @@ export class FormularioComponent {
     this.forma.reset();
   }
 
+  passNoValido(){
+    const pass1 = this.forma.get('password1')?.value;
+    const pass2 = this.forma.get('password2')?.value;
 
+    if (pass1 !== pass2){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+  passwordIguales(pass1Name:string, pass2Name:string){
+    return (formGroup:FormGroup) => {
+
+      const pass1Control = formGroup.get(pass1Name);
+      const pass2Control = formGroup.get(pass2Name);
+
+      if (pass1Control?.value === pass2Control?.value){
+        pass2Control?.setErrors(null);
+      }else{
+        pass2Control?.setErrors({noEsIgual:true});
+
+      }
+    }
+  }
 }
